@@ -1,14 +1,12 @@
 function calcAvgOfAllEvenNumbers(numberList) {
     // your code here
     if (
-        numberList.includes(NaN) === true ||
         numberList.length === 0 ||
-        Array.isArray(numberList) === false ||
-        (numberList.length === 1 && numberList[0] % 2 !== 0)
+        !Array.isArray(numberList)
     )
         return 0;
 
-    let result = 0;
+
     let count = 0;
     let assign = 0;
     let arr = [...numberList];
@@ -17,10 +15,10 @@ function calcAvgOfAllEvenNumbers(numberList) {
             count++;
             assign += element;
         }
-        result = assign / count;
     });
-    return result.toFixed();
+    if (count === 0) return 0;;
+    return Math.round(assign / count);
 }
-let arr = [1, 2, 4, 8, NaN];
+let arr = [1];
 console.log(calcAvgOfAllEvenNumbers(arr));
-console.log(arr.includes(NaN));
+// console.log(arr.includes(NaN));

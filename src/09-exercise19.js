@@ -3,9 +3,9 @@ function isPerfectNumber(n) {
     if (n > 1000 || n <= 5) return false;
 
     let assign = 0;
-    for (let i = 0; i < n - 1; i++) {
-        if (n % i == 0) assign += i;
+    for (let i = 0; i < n; i++) {
+        if (n % i === 0) assign += i;
     }
-    return assign === n ? true : false;
+    return assign === n;
 }
-console.log(isPerfectNumber(5));
+console.log(isPerfectNumber(7));
