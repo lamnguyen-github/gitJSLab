@@ -1,11 +1,25 @@
 function getFullName(firstName, lastName) {
     // your code here
-    let fName = `${firstName[0].toUpperCase()}${firstName.slice(1).toLowerCase()}`.trim();
-    let lName = `${lastName[0].toUpperCase()}${lastName.slice(1).toLowerCase()}`.trim();
 
+    if (firstName === undefined && lastName === undefined) return '';
 
-    return `${fName} ${lName}`;
+    let fName = firstName;
+    let lName = lastName;
 
+    if (lastName === undefined || lastName === '') {
+        fName.trim();
+        return `${fName[0].toUpperCase()}${fName.slice(1).toLowerCase()}`;
+    }
 
+    if (firstName === undefined || firstName === '') {
+        lName.trim();
+        return `${lName[0].toUpperCase()}${lName.slice(1).toLowerCase()}`;
+    }
+    fName = fName.trim();
+    lName = lName.trim();
+    return `${fName[0].toUpperCase()}${fName.slice(1).toLowerCase()} ${lName[0].toUpperCase()}${lName
+    .slice(1)
+    .toLowerCase()}`;
 }
-console.log(getFullName('nguyen', 'Lam'));
+
+console.log(getFullName());

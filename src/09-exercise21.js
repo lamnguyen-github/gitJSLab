@@ -9,6 +9,8 @@ const isPrime = (n) => {
 //  for...i
 function hasPrimeV1(numberList) {
     // your code here
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
+
     for (let i = 0; i < numberList.length; i++) {
         if (isPrime(numberList[i])) return true;
     }
@@ -18,6 +20,8 @@ function hasPrimeV1(numberList) {
 //  forEach
 function hasPrimeV2(numberList) {
     // your code here
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
+
     let result = false;
     numberList.forEach((value) => {
         if (isPrime(value)) result = true;
@@ -28,6 +32,8 @@ function hasPrimeV2(numberList) {
 //  find
 function hasPrimeV3(numberList) {
     // your code here
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
+
     const result = numberList.find((value) => isPrime(value));
     return result >= 2 ? true : false;
 }
@@ -35,6 +41,8 @@ function hasPrimeV3(numberList) {
 //  findIndex
 function hasPrimeV4(numberList) {
     // your code here
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
+
     const result = numberList.findIndex((value) => isPrime(value));
     return result >= 0 ? true : false;
 }
@@ -42,6 +50,8 @@ function hasPrimeV4(numberList) {
 //  some
 function hasPrimeV5(numberList) {
     // your code here
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
+
     const result = numberList.some((value) => isPrime(value));
     return result;
 }
